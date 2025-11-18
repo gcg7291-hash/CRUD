@@ -12,7 +12,12 @@ import java.util.List;
 
 @Controller
 public class TodoController {
-    private final TodoRepository todoRepository = new TodoRepository(); //둘다 사용하기 위해서 클래스필드에 만듬
+//    private final TodoRepository todoRepository = new TodoRepository(); //둘다 사용하기 위해서 클래스필드에 만듬
+    private final TodoRepository todoRepository;
+
+    public TodoController(TodoRepository todoRepository) {
+        this.todoRepository = todoRepository;
+    }
 
     @GetMapping("/todos")
     public String todos(Model model) {
