@@ -2,6 +2,7 @@ package com.example.todoapp.repository;
 
 import com.example.todoapp.dto.TodoDto;
 import org.springframework.stereotype.Repository;
+import java.util.Optional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,14 +25,18 @@ public class TodoRepository {
     }
 
     public List<TodoDto> findAll() {
+
         return new ArrayList<>(storage.values());
     }
 
-    public TodoDto findById(Long id) {
-        return storage.get(id);
+    public Optional<TodoDto> findById(Long id) {
+
+//        return storage.get(id);
+        return Optional.ofNullable(storage.get(id));
     }
 
     public void deleteById(Long id) {
+
         storage.remove(id);
     }
 }
