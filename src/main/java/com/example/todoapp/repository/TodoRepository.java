@@ -52,4 +52,8 @@ public class TodoRepository {
                 .toList();
     }
 
+    public void deleteCompleted(){ // entrySet (key, value) 반복해서 출력하는거
+        storage.entrySet().removeIf(item -> item.getValue().isCompleted());
+    }
+
 }

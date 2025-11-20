@@ -6,6 +6,11 @@
 
 <div layout:fragment="content">
 
+    <div class="status">
+        <p >전체 : <span th:text="${totalCount}"></span></p>
+        <p>완료 : <span th:text="${completedCount}"></span></p>
+        <p>미완료 : <span th:text="${activeCount}"></span></p>
+    </div>
 
     <table class="table table-striped" >
         <thead>
