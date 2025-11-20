@@ -6,6 +6,10 @@ public class TodoDto {
     private String content;
     private boolean completed;
 
+    public TodoDto() { //빈 객체 만들기
+
+    }
+
     public TodoDto(Long id, String title, String content, boolean completed) {
         this.id = id;
         this.title = title;
