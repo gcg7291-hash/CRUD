@@ -3,6 +3,7 @@ package com.example.todoapp.entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name="todos") //java언어를 SQL 언어로 자동 변경
 public class TodoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
